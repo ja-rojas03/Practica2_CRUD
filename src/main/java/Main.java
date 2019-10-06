@@ -1,7 +1,12 @@
 import Classes.Controller;
 import Classes.Estudiante;
+import spark.ModelAndView;
+import spark.template.freemarker.FreeMarkerEngine;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static spark.Spark.*;
 
@@ -9,12 +14,15 @@ public class Main {
     public static void main(String[] args) {
 
         get("/", (request,response) -> {
-            ArrayList<Estudiante> estudiantes = Controller.getInstance().getEstudiantes();
-            ArrayList<String> nombres = new ArrayList<>();
-            for (Estudiante estudiante: estudiantes) {
-                nombres.add(estudiante.getNombre());
-            }
-            return nombres;
+            ArrayList<Estudiante> estudiantes = new ArrayList<>();
+            estudiantes = Controller.getInstance().getEstudiantes();
+
+
+            Map<String,Object> attributes = new HashMap<>();
+            attributes.put("estudiantes",estudiantes);
+
+
+            return new FreeMarkerEngine().render(new ModelAndView(attributes,"datosEstudiante.ftl"));
         });
 
         get("/add", (request, response) -> {
