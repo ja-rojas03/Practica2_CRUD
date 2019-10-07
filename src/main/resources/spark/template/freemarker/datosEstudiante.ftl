@@ -2,12 +2,7 @@
 <html>
 <head>
     <title>Informacion Estudiantes</title>
-    <style>
-        table {
-            border: solid 2px black;
-        }
-
-    </style>
+    <link href="/css/datosEstudiante.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,16 +21,15 @@
                     <td>${estudiante.nombre}</td>
                     <td>${estudiante.apellido}</td>
                     <td>${estudiante.telefono}</td>
+                    <td><a href="/update/${estudiante.matricula?string["0"]}/"><img src="/images/pencil.png"/></a></td>
                 </tr>
             </#list>
         </table>
     </p>
 
-    <p>
-        <span><a href="/add">ADD</a></span>
-        <span><a href="/update">UPDATE</a></span>
-        <span><a href="/delete">DELETE</a></span>
-    </p>
+    <form action="/add/" method="get">
+        <button name="Anadir" type="submit">Nuevo Estudiante</button>
+    </form>
 
 </body>
 </html>
