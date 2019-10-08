@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Listado de Estudiantes</h1>
-    <p>
+    <div>
         <br/>
         <table>
             <tr>
@@ -24,11 +24,14 @@
                 </tr>
             </#list>
         </table>
-    </p>
+        <br/><br/>
 
-    <form action="/add/" method="get">
-        <button name="Anadir" type="submit">Nuevo Estudiante</button>
-    </form>
+        <form action="/add/" method="get">
+            <button name="Anadir" type="submit">Nuevo Estudiante</button>
+        </form>
+
+    </div>
+
 
 </body>
 </html>

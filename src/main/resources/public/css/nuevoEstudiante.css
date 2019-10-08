@@ -1,19 +1,36 @@
+.first-h2 {
+    margin-block-start: 0px;
+}
+
 h1 {
     color: blue;
     font-family: Arial;
     text-align: center;
-    padding: 3px;
+
+}
+
+div {
+    text-align: center;
+    margin: auto;
+}
+
+span {
+    display: inline-block;
+    padding: 30px;
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 5px;
 }
 
 input {
     position: relative;
     font-size: 1.5em;
     border: 3px solid #10abff;
-    padding: 3px;
     display: inline-block;
     border-radius: 9999em;
     color: black;
     cursor: pointer;
+    text-align: center;
 }
 
 button {
