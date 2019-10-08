@@ -21,3 +21,10 @@ button:hover{
     background: linear-gradient(21deg, #10abff, #1beabd);
     color: white;
 }
+
+h1 {
+    color: blue;
+    font-family: Arial;
+    text-align: center;
+    padding: 3px;
+}

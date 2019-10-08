@@ -29,8 +29,21 @@ public class Main {
         });
 
         get("/add/", (request, response) -> {
-            System.out.println("INSIDE GET");
             return new FreeMarkerEngine().render(new ModelAndView(null,"nuevoEstudiante.ftl"));
+        });
+
+        get("/visualize/:matricula/", (request, response) -> {
+            int matricula = Integer.parseInt(request.params("matricula"));
+            ArrayList<Estudiante> estudiantes = Controller.getInstance().getEstudiantes();
+            Estudiante estudianteActual = null;
+            for(Estudiante estudiante: estudiantes) {
+                if (estudiante.getMatricula() == matricula ){
+                    estudianteActual = estudiante;
+                }
+            }
+            Map<String, Object> attributes = new HashMap<>();
+            attributes.put("estudiante",estudianteActual);
+            return new FreeMarkerEngine().render(new ModelAndView(attributes, "visualEstudiante.ftl"));
         });
 
         get("/update/:matricula/", (request, response) -> {
