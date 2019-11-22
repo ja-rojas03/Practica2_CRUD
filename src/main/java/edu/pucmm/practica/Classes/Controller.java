@@ -1,4 +1,4 @@
-package Classes;
+package edu.pucmm.practica.Classes;
 
 import java.util.ArrayList;
 

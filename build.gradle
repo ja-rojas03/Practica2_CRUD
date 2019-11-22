@@ -1,12 +1,14 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
 group 'com.spark-java'
 version '2.8.0'
 
 sourceCompatibility = 1.8
-
+mainClassName = "edu.pucmm.practica.Main"
 repositories {
     mavenCentral()
 }
@@ -20,4 +22,18 @@ dependencies {
     compile 'org.freemarker:freemarker:2.3.26-incubating'
     //
     compile "org.slf4j:slf4j-simple:1.7.21"
+}
+
+shadowJar {
+    basename = 'practica'
+    classifier = null
+    version = null
+
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+task stage {
+    dependsOn shadowJar
 }

@@ -1,5 +1,7 @@
-import Classes.Controller;
-import Classes.Estudiante;
+package edu.pucmm.practica;
+
+import edu.pucmm.practica.Classes.Controller;
+import edu.pucmm.practica.Classes.Estudiante;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 

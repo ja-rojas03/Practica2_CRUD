@@ -1,4 +1,4 @@
-package Classes;
+package edu.pucmm.practica.Classes;
 
 public class Estudiante {
 
