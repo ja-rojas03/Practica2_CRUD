@@ -9,6 +9,7 @@ version '2.8.0'
 
 sourceCompatibility = 1.8
 mainClassName = "edu.pucmm.practica.Main"
+
 repositories {
     mavenCentral()
 }
@@ -30,9 +31,6 @@ shadowJar {
     classifier = null
     version = null
 }
-
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'java'
 
 task stage {
     dependsOn shadowJar

@@ -1,1 +1,1 @@
-web: java -jar build/libs/practica2.jar
+web: java -jar build/libs/spark-core.jar
