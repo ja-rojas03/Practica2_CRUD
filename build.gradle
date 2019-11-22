@@ -25,10 +25,9 @@ dependencies {
 }
 
 shadowJar {
-    basename = 'practica'
+    baseName = 'practica2'
     classifier = null
     version = null
-
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
