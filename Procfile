@@ -1,1 +1,1 @@
-web: java -jar build/libs/Practica2_CRUD.jar
+web: java -jar build/libs/practica2.jar
