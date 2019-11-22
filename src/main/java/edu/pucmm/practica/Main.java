@@ -14,6 +14,7 @@ import static spark.Spark.*;
 public class Main {
     public static void main(String[] args) {
 
+        port(getHerokuAssignedPort());
         staticFiles.location("/public");
 
         ////////////////////////////////////////////////////////////////////////
@@ -112,5 +113,16 @@ public class Main {
             response.redirect("/");
             return "";
         });
+    }
+    /**
+     * Metodo para setear el puerto en Heroku
+     * @return
+     */
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //Retorna el puerto por defecto en caso de no estar en Heroku.
     }
 }
